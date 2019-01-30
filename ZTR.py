@@ -65,7 +65,7 @@ class ZTR:
 		print(colors.blue + "[I] Checking for privilige escalation via Bash.." + colors.end)
 		comm = "sudo /bin/bash -i"
 		out, err = shell('sudo -l')
-		if 'sh' in out or 'sh' in err or "ALL" in out or "ALL" in err:
+		if 'sh' in out[5:] or 'sh' in err[5:] or "ALL" in out[5:] or "ALL" in err[5:]:
 			print(colors.green + "[#] Privilige Escalation is possible with Bash!" + colors.end)
 			exploit = colors.yellow + comm + colors.end
 			exploits.append(exploit)
