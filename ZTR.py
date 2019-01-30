@@ -76,8 +76,8 @@ class ZTR:
 		cve = "https://www.exploit-db.com/exploits/40064"
 		comm = "wget -h | grep GNU"
 		out, err = shell(comm)
-		if float(out[8:12]) < 1.18:
-			print out[8:12]
+		if float(out[8:13]) < 1.18:
+			print out[8:13]
 			print(colors.green + "[#] Privilige Escalation is possible with CVE-2016-4971! " + colors.end)
                         exploit = colors.yellow + cve + colors.end
                         exploits.append(exploit)
